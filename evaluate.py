@@ -5,9 +5,9 @@ import enchant
 def wfilter(entry):
     wordfilter = Wordfilter()
     if wordfilter.blacklisted(entry.lower()) == False:
-        return entry
+        return True
     else:
-        return "oof you used a slur there buddy boy slow down"
+        return False
 
 
 
@@ -24,7 +24,6 @@ def percentwords(entry):
         return True
             
     return False
-        
 
 def wordcount(entry):
     wlist =  entry.split()
