@@ -40,6 +40,7 @@ def wordcount(entry):
         return 4
 
 #puts all of the previus methods together, if it returns 0 then that means the entry did not pass
+#use this in flask thing
 def getQualityOfEntry(entry):
     if wfilter(entry) and percentwords(entry):
         return wordcount(entry)
