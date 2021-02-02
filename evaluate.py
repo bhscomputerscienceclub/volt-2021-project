@@ -1,17 +1,18 @@
 from wordfilter import Wordfilter
 import enchant
+import wordfilter
 
-
+# returns true if the message doesn't contain a blacklisted word
 def wfilter(entry):
     wordfilter = Wordfilter()
     if wordfilter.blacklisted(entry.lower()) == False:
-        return entry
+        return True
     else:
-        return "oof you used a slur there buddy boy slow down"
+        return False
 
 
 
-#check if at least half of all words are real words
+#check if at least 3/4 of all words are real words
 def percentwords(entry):
     dictionary = enchant.Dict("en_US")
     wlist = entry.split()
@@ -25,7 +26,7 @@ def percentwords(entry):
             
     return False
         
-
+#define a scre for the length of the input
 def wordcount(entry):
     wlist =  entry.split()
 
@@ -37,3 +38,9 @@ def wordcount(entry):
         return 3
     else:
         return 4
+
+#puts all of the previus methods together, if it returns 0 then that means the entry did not pass
+def getQualityOfEntry(entry):
+    if wfilter(entry) and percentwords(entry):
+        return wordcount(entry)
+    return 0
