@@ -15,7 +15,7 @@ def index():
         #check if userInput is a valid input
         if inputValue != 0:
             nextAvalSpot = len(os.listdir(str(inputValue)))
-            tempDir = "{}/{}.txt"
+            tempDir = "diaries/{}/{}.txt"
             a = open(tempDir.format(inputValue,nextAvalSpot), "w")
             a.write(userInput)
         else:
