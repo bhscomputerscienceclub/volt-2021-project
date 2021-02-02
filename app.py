@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
-from evaluate import getQualityOfEntry
-import os
+from putDiary import diaryOrg
 
 app = Flask(__name__)
 
@@ -10,23 +9,13 @@ def index():
 
     if request.method == "POST":
         userInput = request.form.get('abc')
-        inputValue  = getQualityOfEntry(userInput)
-
-        #check if userInput is a valid input
-        if inputValue != 0:
-            nextAvalSpot = len(os.listdir("diaries/" + str(inputValue)))
-            tempDir = "diaries/{}/{}.txt"
-            a = open(tempDir.format(inputValue,nextAvalSpot), "w")
-            a.write(userInput)
+        
+        if diaryOrg(userInput):
+            print("sucess")
         else:
-            #do somthing if userInput isn't valid
-            pass
+            print("fail")
 
     return render_template('index.html')
-
-
-
-    return render_template("index.html")
 
 
 app.run(debug=True)

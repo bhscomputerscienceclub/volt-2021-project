@@ -13,7 +13,7 @@ def wfilter(entry):
 
 
 #check if at least 3/4 of all words are real words
-def percentwords(entry):
+def percentWords(entry):
     dictionary = enchant.Dict("en_US")
     wlist = entry.split()
     realWordCount = 0
@@ -27,7 +27,7 @@ def percentwords(entry):
     return False
         
 #define a scre for the length of the input
-def wordcount(entry):
+def wordCount(entry):
     wlist =  entry.split()
 
     if len(wlist) < 15:
@@ -38,9 +38,3 @@ def wordcount(entry):
         return 3
     else:
         return 4
-
-#puts all of the previus methods together, if it returns 0 then that means the entry did not pass
-def getQualityOfEntry(entry):
-    if wfilter(entry) and percentwords(entry):
-        return wordcount(entry)
-    return 0
