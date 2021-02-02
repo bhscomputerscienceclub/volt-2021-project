@@ -8,7 +8,7 @@ def diaryOrg(entry):
 
     if filterCheck and percentCheck:
         diary = open(
-            "diaries/" + str(wordCount(entry)) + "/" + str(nextAvalSpot) + ".txt",
+            "diaries/" + str(wordCount(entry)) + "/" + str(nextAvalSpot),
             "w",
         )
         diary.write(entry)

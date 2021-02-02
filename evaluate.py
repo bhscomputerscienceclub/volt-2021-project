@@ -1,6 +1,5 @@
 from wordfilter import Wordfilter
 import enchant
-import wordfilter
 
 # returns true if the message doesn't contain a blacklisted word
 def wfilter(entry):
