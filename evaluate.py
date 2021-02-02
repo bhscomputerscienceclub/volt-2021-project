@@ -27,7 +27,7 @@ def percentWords(entry):
     return False
         
 #define a scre for the length of the input
-def wordCount(entry):
+def wordCountScore(entry):
     wlist =  entry.split()
 
     if len(wlist) < 15:
