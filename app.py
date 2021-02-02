@@ -12,8 +12,6 @@ def index():
         userInput = request.form.get('abc')
         inputValue  = getQualityOfEntry(userInput)
 
-
-        #use indicated methods from other files 
         #check if userInput is a valid input
         if inputValue != 0:
             nextAvalSpot = len(os.listdir("diaries/" + str(inputValue)))
