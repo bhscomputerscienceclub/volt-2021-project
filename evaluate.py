@@ -18,12 +18,12 @@ def percentwords(entry):
     wlist = entry.split()
     realWordCount = 0
     for i in wlist:
-        if dictionary.check(i) ==True:
+        if dictionary.check(i) == True:
             realWordCount += 1
-    
-    if realWordCount / len(wlist) >= 0.75 :
+
+    if realWordCount / len(wlist) >= 0.75:
         return True
-            
+
     return False
         
 #define a scre for the length of the input

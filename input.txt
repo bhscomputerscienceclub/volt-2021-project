@@ -1,5 +1,0 @@
-what's uphellohello
-hello
-HI
-What up
-From the link you provided "Do not use os.linesep as a line terminator when writing files opened in text mode (the default); use a single '\n' instead, on all platforms." So what do you mean by "right" and what are the reasons for their and your comment?
