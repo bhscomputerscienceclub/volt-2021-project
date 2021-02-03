@@ -10,13 +10,13 @@ def index():
     diary = None
 
     if request.method == "POST":
-        userInput = request.form.get('abc')
+        userInput = request.form['abc']
         if diaryOrg(userInput):
             diary = getDiary(wordCountScore(userInput))
             print(diary)
 
 
-    return render_template('index.html', diary = diary)
+    return render_template('index.html')
 
 
 app.run(debug=True)

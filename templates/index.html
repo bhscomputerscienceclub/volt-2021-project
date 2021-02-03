@@ -9,19 +9,20 @@
 </head>
 
 <body>
-    <center>
-        <h1>Tell Me your secret</h1>
-
-
-        <form action="." method="POST" name="Input" class="hform">
-            <input name="abc" type="text">
-        </form>
-        
-
-        {% if diary != None %}
-            <p>{{diary}}</p>
-        {% endif %}
-    </center>
+    <div class="container">
+        <div class="content1">
+            <h1>Give And<br>Recieve</h1>
+            <h3>Anonymous Diary Entry</h3>
+        </div>
+        <div class="content2">
+            <h2>What Do You Want To Get Off Your Chest?</h2>
+            <form action="." method="POST" name="Input" class="hform">
+            <textarea name="abc" placeholder="Message here..."></textarea>
+            <br><br>
+            <input type="submit">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
