@@ -1,21 +1,22 @@
 from flask import Flask, render_template, request
 from putDiary import diaryOrg
-
+from getDiary import getDiary
+from evaluate import wordCountScore
 app = Flask(__name__)
 
 
 @app.route("/", methods=["POST", "GET"])
 def index():
+    diary = None
 
     if request.method == "POST":
         userInput = request.form.get('abc')
-        
         if diaryOrg(userInput):
-            print("sucess")
-        else:
-            print("fail")
+            diary = getDiary(wordCountScore(userInput))
+            print(diary)
 
-    return render_template('index.html')
+
+    return render_template('index.html', diary = diary)
 
 
 app.run(debug=True)
