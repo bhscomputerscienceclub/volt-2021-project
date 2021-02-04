@@ -1,7 +1,6 @@
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    
     grid-template-rows: 90vh;
 }
 
@@ -25,7 +24,7 @@ h1 {
     font-size: 100px;
 }
 
-textarea{
+textarea {
     width: 90%;
     height: 400px;
 }
