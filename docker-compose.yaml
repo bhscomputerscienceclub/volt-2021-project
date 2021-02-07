@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  web:
+    container_name: anonymousdiary
+    restart: unless-stopped
+    volumes:
+      - diaries:/code/diaries
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+volumes:
+  diaries:
+#networks:
+#  default:
+#    external:
+#      name: nginxnet
