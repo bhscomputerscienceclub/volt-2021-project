@@ -6,5 +6,5 @@ RUN apk add --no-cache py3-enchant py3-pip hunspell-en aspell-en
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
-EXPOSE 5000
+EXPOSE 5001
 CMD ["flask","run"]

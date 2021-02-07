@@ -7,7 +7,7 @@ services:
       - diaries:/code/diaries
     build: .
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
       - PYTHONUNBUFFERED=1
 volumes:
