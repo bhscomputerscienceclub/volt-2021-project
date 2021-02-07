@@ -1,12 +1,10 @@
-FROM python:3.8-alpine
+FROM alpine:3.13
 WORKDIR /code
-#ENV FLASK_APP=myapp.py
-#ENV FLASK_RUN_HOST=0.0.0.0
-#RUN apk add --no-cache gcc musl-dev linux-headers
-COPY . .
+ENV FLASK_RUN_HOST=0.0.0.0
 RUN apk update
-RUN apk add enchant2 aspell aspell-en
+RUN apk add --no-cache py3-enchant py3-pip hunspell-en aspell-en
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-
+COPY . .
 EXPOSE 5000
-CMD ["python3","app.py"]
+CMD ["flask","run"]
