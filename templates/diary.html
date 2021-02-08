@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/diary.css') }}">
     <title>Document</title>
 </head>
 
 <body>
+    <ul>
+        <li><a href="/"><span class="arrow arrow-left"></span><a></li>
+      </ul>
+
     <div class="container">
-        <center>
+        <div class="diary">
             <h2>Someone's diary</h2><br>
             {{diary}}
-        </center>
+        </div>
 </body>
 
 </html>
