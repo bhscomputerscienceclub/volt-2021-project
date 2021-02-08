@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+*{
+    font-family: Roboto;
+}
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -11,6 +17,7 @@
     border: solid 5px;
     align-self: center;
     text-align: center;
+    font-family: Roboto;
 }
 
 .content2 {
@@ -19,17 +26,29 @@
     border: solid 5px;
     justify-self: center;
     padding: 10px;
+    font-family: Roboto;
 }
 
 h1 {
     font-size: 100px;
+    font-family: Roboto;
 }
 
 textarea{
     width: 90%;
     height: 400px;
+    font-family: Roboto;
 }
 
 h3 {
     text-align: center;
+    font-family: Roboto;
+}
+
+h2 {
+    font-family: Roboto;
+}
+
+p{
+    font-family: Roboto;
 }
