@@ -4,13 +4,13 @@ services:
     container_name: anonymousdiary
     restart: unless-stopped
     volumes:
-      - diaries:/code/diaries
+      - data:/code/diaries
     build: .
     environment:
       - PYTHONUNBUFFERED=1
 volumes:
-  diaries:
-networks:
-  default:
-    external:
-      name: nginxnet
+  data:
+#networks:
+#  default:
+#    external:
+#      name: nginxnet
