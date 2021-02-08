@@ -6,7 +6,10 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-
+os.makedirs("diaries/1", exist_ok=True)
+os.makedirs("diaries/2", exist_ok=True)
+os.makedirs("diaries/3", exist_ok=True)
+os.makedirs("diaries/4", exist_ok=True)
 
 @app.route("/", methods=["POST", "GET"])
 def index():
