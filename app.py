@@ -3,9 +3,11 @@ from putDiary import diaryOrg
 from getDiary import getDiary
 from evaluate import wordCountScore
 import os
+from distutils.dir_util import copy_tree
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+copy_tree("example-diaries/", "diaries/")
 
 
 @app.route("/", methods=["POST", "GET"])
