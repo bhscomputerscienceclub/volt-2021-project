@@ -12,20 +12,24 @@ copy_tree("example-diaries/", "diaries/")
 
 @app.route("/", methods=["POST", "GET"])
 def index():
-    diary = None
+    real = True
 
     if request.method == "POST":
         userInput = request.form["diary"]
         if diaryOrg(userInput):
             session["diary"] = getDiary(wordCountScore(userInput))
             return redirect(url_for("diary"))
-
-    return render_template("index.html")
+        else:
+            real=False
+    return render_template("index.html", real = real)
 
 
 @app.route("/diary", methods=["POST", "GET"])
 def diary():
     diary = session.get("diary")
+
+    if diary == None:
+        return redirect(url_for("index"))
 
     return render_template("diary.html", diary=diary)
 

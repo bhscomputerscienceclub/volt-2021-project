@@ -26,6 +26,9 @@
                 <br><br>
                 <input type="submit">
             </form>
+            {% if not real %}
+            <p>Invalid input. Please try again</p>
+            {% endif%}
         </div>
     </div>
 </body>
